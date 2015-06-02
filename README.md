@@ -3,8 +3,8 @@
 Create a custom widget that makes a call to our RESTful web service, handles
 the response,
 and then displays a list of news headlines.  The API call is an HTTP POST made
-to `/api/all_entity_info` of the web service, which is provided as part of the
-this coding challenge bundle.
+to `/api/all_entity_info` of the web service, which is provided as part of this
+coding challenge bundle.
 
 
 # Setting up your dev environment
