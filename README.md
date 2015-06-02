@@ -1,12 +1,16 @@
 # Synthos Code Challenge
 
-Create a custom widget that makes a call to our REST API, handles the response,
+Create a custom widget that makes a call to our RESTful web service, handles
+the response,
 and then displays a list of news headlines.  The API call is an HTTP POST made
 to `/api/all_entity_info` of the web service, which is provided as part of the
 this coding challenge bundle.
 
 
 # Setting up your dev environment
+
+The following instructions will walk you through setting up the Node.js front end
+web app, as well as the server-side web service that the front end will talk to.
 
 ## Client-side setup
 
@@ -34,8 +38,8 @@ gray webpage with a single widget labelled 'Widget Demo'.
 A successful call to `POST /api/all_entity_info` will return a JSON object with
 3 top-level attributes: `LatestNews`, `EntityTrend`, and `TopEntities`. The
 only one we're interested in is the `LatestNews[]` list, which contains the list
-of news articles and their contained "entities" (people, places, and
-organizations).  Here's a snippet of the web service response:
+of news articles (the `Document` JSON objects) and their contained "entities" 
+(people, places, and organizations).  Here's a snippet of the web service response:
 
 ```json
 {
@@ -83,32 +87,30 @@ organizations).  Here's a snippet of the web service response:
 
 ## Part 1
 
-Grab the first 20 documents from this list and display them in order. In the
-UI, show the headline (Document.Headline), a friendly version of the document
-insert date (`Document.InsertDate`) and the news source (Document.Source).
-There’s an example of this in the included file, 
-`public/templates/customWidget.html`.
+Grab the first 20 documents from the `LatestNews[]` list and display them in
+order. In the UI, show the headline (Document.Headline), a friendly version of
+the document insert date (`Document.InsertDate`) and the news source 
+(`Document.Source`).  There’s an example of this in `public/templates/customWidget.html`,
+or if you've already started up your Node.js app server, you can see it live at
+[localhost:3000]().
 
 ## Part 2
 
 When a headline is clicked, the document should expand to show details about the
 people, places, and organizations contained in the document.  This info is
 contained within the `Org`, `Person`, and `Place` entities of each `Document`
-object returned from the Heelix REST API.
+object returned from the REST API running at [localhost:8081]().
 
-The expanded headline information should show the top 5 items from each of
-these -- the top 5 items in `Document.Orgs[]`, `Document.Persons[]` and 
-`Document.Places[]` -- organized by type and showing both the `Name` and `Score`
+The expanded headline information should show the top 5 entities from each 
+document (i.e. the top 5 items in `Document.Orgs[]`, `Document.Persons[]` and 
+`Document.Places[]`) organized by type and showing both the `Name` and `Score`
 for the item.
-
-Sample markup for what was just described can be found in
-`public/templates/customWidget.html`, as well, though feel free to alter the
-way this content is rendered.
 
 ## Part 3
 
-If a document returned from the API does not have any items listed of a
-certain type, we should report, "No items listed" for that type.
+If a given document returned from the API has no items of a certain entity type
+(e.g. `Document.Persons[]` is empty) we should report, "No items listed" for
+that type.
 
 If the headline is clicked again, the extended information on people, places
 and orgs should collapse.
