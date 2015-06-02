@@ -1,0 +1,7 @@
+
+# Ignore the Node.js stuff...
+node_modules
+npm-debug.log
+
+# Ignore the OS X metafile folders
+.DS_Store

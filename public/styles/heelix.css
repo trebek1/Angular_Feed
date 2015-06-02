@@ -1,0 +1,115 @@
+
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+
+html {
+    height: 100%;
+    background: #b5b6b6;
+}
+
+body {
+    font: normal normal 15px/23px 'Titillium Web', sans-serif;
+    background: -webkit-linear-gradient(top, #e5e6e6, #b5b6b6);
+    padding: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #f5f6f6;
+}
+
+.heelix-widget {
+    margin: 0 auto;
+    background: #454646;
+    border: 2px solid #252626;
+    width: 50%;
+    color: #d5d6d6;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+    border-radius: 5px;
+}
+
+.widget-header {
+    padding: 10px;
+    background: -webkit-linear-gradient(top, #353636, #252626);
+    display: inline-block;
+    width: calc(100% - 20px);
+}
+
+.widget-body {
+    padding: 20px;
+}
+
+.document-wrapper {
+    display: inline-block;
+    width: 100%;
+}
+
+.widget-header::after,
+.document-wrapper::after {
+    content: '';
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.widget-title {
+    font-weight: bold;
+    float: left;
+}
+
+.widget-control {
+    float: right;
+    font-size: 0.8em;
+    display: block;
+    background: -webkit-linear-gradient(top, #555656, #353636);
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 1px solid #151616;
+}
+
+.widget-control:hover {
+    background: #555656;
+}
+
+.widget-control:active {
+    background: #757676;
+}
+
+.widget-control + .widget-control {
+    margin-right: 5px;
+}
+
+.document-wrapper {
+    clear: left;
+    margin: 0.5em 0 1em;
+}
+
+.document-headline {
+    font-size: 1.33em;
+}
+
+.document-date,
+.document-source {
+    font-size: .85em;
+    color: #b5b6b6;
+}
+
+.entity-group {
+    float: left;
+    width: 30%;
+    margin: 0.5em 0;
+}
+
+.entity-group + .entity-group {
+    margin-left: 5%;
+}
+
+.entity-group-title {
+    font-size: .85em;
+    color: #b5b6b6;
+}
+
+.entity-score {
+    float: right;
+    margin-right: .25em;
+}

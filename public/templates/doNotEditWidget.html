@@ -1,0 +1,20 @@
+
+<div class="heelix-widget">
+
+    <div class="widget-header">
+        <p class="widget-title">Widget Demo</p>
+
+        <a href="#" class="widget-dismiss widget-control" ng-click="dismissWidget()">x</a>
+        <a href="#" class="widget-menu widget-control" ng-click="showWidgetMenu()">Options</a>
+    </div>
+
+    <div class="widget-body">
+
+        <!-- *
+             * We can assume this would be dynamic to load various types of widget;
+			 * For this demo, feel free to modify the customWidget.html template directly.
+             *
+             * -->
+        <ng-include src="'templates/customWidget.html'"></ng-include>
+    </div>
+</div>
