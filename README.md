@@ -1,4 +1,4 @@
-# Synthos Coding Challenge
+# Synthos Code Challenge
 
 Create a custom widget that makes a call to our REST API, handles the response,
 and then displays a list of news headlines.  The API call is an HTTP POST made
@@ -8,7 +8,25 @@ this coding challenge bundle.
 
 # Setting up your dev environment
 
-[TODO...]
+## Client-side setup
+
+Install [node.js](https://nodejs.org/download/).
+
+Open up a terminal, `cd` into this directory, and then install the node.js
+package dependencies for this project (this could take a few minutes):
+
+	npm install
+
+Start the web service:
+
+	node server
+
+Open up a browser and navigate to [localhost:3000]().  You should see a simple
+gray webpage with a single widget labelled 'Widget Demo'.
+
+## Running the web service
+
+[TODO]
 
 
 # Description of the programming task
@@ -63,10 +81,15 @@ organizations).  Here's a snippet of the web service response:
 }
 ```
 
+## Part 1
+
 Grab the first 20 documents from this list and display them in order. In the
-interface, show the headline (Document.Headline), a friendly version of the
-insert date (Document.InsertDate) and the source (Document.Source). There’s
-an example of this in the included file, `public/templates/customWidget.html`.
+UI, show the headline (Document.Headline), a friendly version of the document
+insert date (`Document.InsertDate`) and the news source (Document.Source).
+There’s an example of this in the included file, 
+`public/templates/customWidget.html`.
+
+## Part 2
 
 When a headline is clicked, the document should expand to show details about the
 people, places, and organizations contained in the document.  This info is
@@ -82,17 +105,23 @@ Sample markup for what was just described can be found in
 `public/templates/customWidget.html`, as well, though feel free to alter the
 way this content is rendered.
 
+## Part 3
+
 If a document returned from the API does not have any items listed of a
 certain type, we should report, "No items listed" for that type.
 
 If the headline is clicked again, the extended information on people, places
 and orgs should collapse.
 
+## Part 4
+
 We also want the documents to update periodically, so they should refresh every
-10 seconds with new information from our API. New documents should be displayed
-at the top of the list, and there should never be more than 50 documents showing
-at a time. Don’t worry about pagination for the old documents -- they can simply
-go away.
+10 seconds or so with new information from our API. New documents should be 
+displayed at the top of the list, and there should never be more than 50
+documents showing at a time. Don’t worry about pagination for the old documents
+-- they can simply go away.
+
+## Oh yeah, and...
 
 If you want to pull in any external libraries, feel free to do so. Some basic
 CSS reset widget wrapper styles have been provided, as well as some basic class
