@@ -21,12 +21,12 @@ package dependencies for this project (this could take a few minutes):
 
 	npm install
 
-Start the web service:
+Start the app server:
 
 	node server
 
-Open up a browser and navigate to [localhost:3000]().  You should see a simple
-gray webpage with a single widget labelled 'Widget Demo'.
+Open up a browser and navigate to [localhost:3000](localhost:3000).  
+You should see a simple gray webpage with a single widget labelled 'Widget Demo'.
 
 ## Running the web service
 
@@ -37,9 +37,10 @@ gray webpage with a single widget labelled 'Widget Demo'.
 
 A successful call to `POST /api/all_entity_info` will return a JSON object with
 3 top-level attributes: `LatestNews`, `EntityTrend`, and `TopEntities`. The
-only one we're interested in is the `LatestNews[]` list, which contains the list
-of news articles (the `Document` JSON objects) and their contained "entities" 
-(people, places, and organizations).  Here's a snippet of the web service response:
+only one we're interested in is `LatestNews[]`, which contains the list of news
+articles (the `Document` JSON objects) and their contained "entities" (people,
+places, and organizations).  Here's the relevant snippet of the web service
+response:
 
 ```json
 {
@@ -92,7 +93,7 @@ order. In the UI, show the headline (Document.Headline), a friendly version of
 the document insert date (`Document.InsertDate`) and the news source 
 (`Document.Source`).  There’s an example of this in `public/templates/customWidget.html`,
 or if you've already started up your Node.js app server, you can see it live at
-[localhost:3000]().
+[localhost:3000](localhost:3000).
 
 ## Part 2
 
