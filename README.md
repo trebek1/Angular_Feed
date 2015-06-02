@@ -25,7 +25,7 @@ Start the app server:
 
 	node server
 
-Open up a browser and navigate to [localhost:3000](localhost:3000).  
+Open up a browser and navigate to http://localhost:3000.  
 You should see a simple gray webpage with a single widget labelled 'Widget Demo'.
 
 ## Running the web service
@@ -93,14 +93,14 @@ order. In the UI, show the headline (Document.Headline), a friendly version of
 the document insert date (`Document.InsertDate`) and the news source 
 (`Document.Source`).  There’s an example of this in `public/templates/customWidget.html`,
 or if you've already started up your Node.js app server, you can see it live at
-[localhost:3000](localhost:3000).
+http://localhost:3000.
 
 ## Part 2
 
 When a headline is clicked, the document should expand to show details about the
 people, places, and organizations contained in the document.  This info is
 contained within the `Org`, `Person`, and `Place` entities of each `Document`
-object returned from the REST API running at [localhost:8081]().
+object returned from the REST API running at [localhost:8081](http://localhost:8081).
 
 The expanded headline information should show the top 5 entities from each 
 document (i.e. the top 5 items in `Document.Orgs[]`, `Document.Persons[]` and 
