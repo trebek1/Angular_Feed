@@ -1,10 +1,9 @@
 # Synthos Code Challenge
 
 Create a custom widget that makes a call to our RESTful web service, handles
-the response,
-and then displays a list of news headlines.  The API call is an HTTP POST made
-to `/api/all_entity_info` of the web service, which is provided as part of this
-coding challenge bundle.
+the response, and then displays a list of news headlines.  The API call is an
+HTTP POST made to `/api/all_entity_info` of the web service, which is provided 
+as part of this coding challenge bundle.
 
 
 # Setting up your dev environment
@@ -14,7 +13,7 @@ web app, as well as the server-side web service that the front end will talk to.
 
 ## Client-side setup
 
-Install [node.js](https://nodejs.org/download/).
+Install [node.js](https://nodejs.org/download/) on your machine.
 
 Open up a terminal, `cd` into this directory, and then install the node.js
 package dependencies for this project (this could take a few minutes):
@@ -30,7 +29,32 @@ You should see a simple gray webpage with a single widget labelled 'Widget Demo'
 
 ## Running the web service
 
-[TODO]
+This project includes a binary that, when executed, starts up a web service
+on `localhost:8081`.  This is the web service that your client will need to 
+talk to.
+
+### Mac OS X
+
+To start up the Heelix web service locally, open up Terminal and run these
+commands:
+
+
+	cd <THIS_PROJECT>/bin/
+	tar xvfz heelix_ws.tgz
+	cd heelix_ws/
+	./heelix_ws
+
+Verify the web service is running by opening up another terminal tab and
+hitting this web service endpoint:
+
+	curl localhost:8081/api/system_info
+
+This call should respond with a short JSON message containing some misc.
+web service info and stats.
+
+### Windows
+
+TODO: compile a Windows binary and check it in to bin/heelix_ws_windows.zip
 
 
 # Description of the programming task
