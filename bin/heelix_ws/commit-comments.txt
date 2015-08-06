@@ -1,0 +1,6 @@
+- PA-510: Switching over to using the gofinch library for accessing the
+  Finch remote service.
+- Updated JSON parsing code to use json.ParseBytes() instead of 
+  NewJSON(json.Parse()).
+- Making use of JSON.Exists(key) to determine if key exists in
+  unit tests (vs. using JSON.Error() and checking if it's nil).

@@ -1,0 +1,24 @@
+#!/bin/bash -e
+
+# Deal with input args
+if [[ $# -ne 2 ]]; then
+	echo
+	echo "USAGE: $0 <email> <password>"
+	echo
+	exit 1
+fi
+
+EMAIL=$1
+PASSWORD=$2
+PORT=8081
+
+echo "Creating new user '${EMAIL}'..."
+curl --fail \
+      -H "Content-Type: application/json" \
+      -X POST -d '{"Email": "'${EMAIL}'", "Password": "'${PASSWORD}'"}' \
+      localhost:${PORT}/api/users
+
+echo "Saving all user info to local file storage..."
+curl --fail localhost:${PORT}/api/save_user_data
+echo "DONE."
+echo
