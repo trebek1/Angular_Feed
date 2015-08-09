@@ -18,19 +18,27 @@ angular.module('Heelix.CustomWidget', [
  *
  */
 ]).controller('customWidgetController', ['$scope', '$http', function($scope, $http) {
-    
-    function fetch(){
-    	$http.post("http://localhost:8081/api/all_entity_info").success(function(response){$scope.information = response.LatestNews}); 
+    documents = [];
+
+    function pullData(){
+    	$http.post("http://localhost:8081/api/all_entity_info").success(function(response){
+    		$scope.information = response.LatestNews
+    	
+    	for(var i =0; i<20; i++){
+    		documents.push(response.LatestNews[i])
+    	}});
 	}
-	fetch(); 
+	pullData(); 
 	
+
 	
     /*
      *
      * Custom widget business logic should go here.
      *
      */
-
+     // Save the documents array to access in the view 
+     $scope.documents = documents; 
 
     // this is our demo test, just to make sure everything's wired up properly. feel free to
     // delete it once you get going.
