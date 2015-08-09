@@ -9,9 +9,10 @@
              *
              * -->
         
-        <div ng-repeat = "document in documents"> 
+        <div ng-repeat = "document in documents" ng-class-even= "'even'"> 
             <br>
-             <div ng-click="collapsed=!collapsed">Headline: {{document.Headline}}</div>
+             <button ng-click="collapsed=!collapsed">Headline: {{document.Headline}}</button>
+             <br>
             <br>
             Date: {{document.InsertDate | date:'medium'}}
             <br>
@@ -19,11 +20,6 @@
             <br>
 
             <div class="document-wrapper" ng-show = "collapsed">
-            <a href="#" class="document-headline">{{ demoTitle }}</a>
-            <p class="document-details">
-                <span class="document-date">Tuesday, May 12 2014</span> |
-                <span class="document-source">News Source</span>
-            </p>
 
             <div class="entity-group">
                 <p class="entity-group-title">Organizations</p>
@@ -45,7 +41,6 @@
             </div>            
             
             </div>
-
 
             <br>
         </div> 

@@ -6,16 +6,25 @@ html {
     background: #b5b6b6;
 }
 
+
 body {
     font: normal normal 15px/23px 'Titillium Web', sans-serif;
     background: -webkit-linear-gradient(top, #e5e6e6, #b5b6b6);
     padding: 40px;
 }
 
-a {
+button {
+    font: normal normal 15px/23px 'Titillium Web', sans-serif;
+    background: -webkit-linear-gradient(top, #e5e6e6, #b5b6b6);
+    padding: 20px;
+}
+
+a{
     text-decoration: none;
     color: #f5f6f6;
 }
+
+.even{ background-color:grey }
 
 .heelix-widget {
     margin: 0 auto;
