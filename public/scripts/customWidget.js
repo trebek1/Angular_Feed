@@ -9,7 +9,6 @@
 angular.module('Heelix.CustomWidget', [
 
 
-
 /**
  * @ngdoc controller
  * @name customWidgetController
@@ -20,7 +19,12 @@ angular.module('Heelix.CustomWidget', [
  */
 ]).controller('customWidgetController', ['$scope', '$http', function($scope, $http) {
     
-
+    function fetch(){
+    	$http.post("http://localhost:8081/api/all_entity_info").success(function(response){$scope.information = response.LatestNews}); 
+	}
+	fetch(); 
+	
+	
     /*
      *
      * Custom widget business logic should go here.
