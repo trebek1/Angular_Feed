@@ -37,10 +37,13 @@
 
     </div>
     <div ng-repeat = "document in documents"> 
-        "This is a document" 
+        Document Headline: {{document.Headline}}
         <br>
-        {{document}}
+        Document Date: {{document.InsertDate | date:'medium'}}
         <br>
-     </div>
+        Document Source: {{document.Source}}
+        <br>
+        <br>
+    </div>
      
 </div>

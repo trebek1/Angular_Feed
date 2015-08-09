@@ -9,6 +9,8 @@
 angular.module('Heelix.CustomWidget', [
 
 
+
+
 /**
  * @ngdoc controller
  * @name customWidgetController
@@ -25,11 +27,13 @@ angular.module('Heelix.CustomWidget', [
     		$scope.information = response.LatestNews
     	
     	for(var i =0; i<20; i++){
-    		documents.push(response.LatestNews[i])
+    		documents.push(response.LatestNews[i].Document)
+    		
     	}});
 	}
 	pullData(); 
 	
+
 
 	
     /*
