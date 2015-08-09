@@ -19,7 +19,9 @@ angular.module('Heelix.CustomWidget', [
  *
  *
  */
-]).controller('customWidgetController', ['$scope', '$http', function($scope, $http) {
+])
+
+.controller('customWidgetController', ['$scope', '$http', function($scope, $http) {
     documents = [];
 
     function pullData(){

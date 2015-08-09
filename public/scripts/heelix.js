@@ -21,7 +21,9 @@ angular.module('Heelix', [
     'Heelix.CustomWidget'
 
 // our general Widget wrapper constructor
-]).directive('heelixWidget', [function() {
+])
+
+.directive('heelixWidget', [function() {
     
     return {
         
