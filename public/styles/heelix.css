@@ -10,7 +10,7 @@ html {
 body {
     font: normal normal 15px/23px 'Titillium Web', sans-serif;
     background: -webkit-linear-gradient(top, #e5e6e6, #b5b6b6);
-    padding: 40px;
+    padding: 20px;
 }
 
 button {
@@ -37,7 +37,7 @@ a{
     margin: 0 auto;
     background: #454646;
     border: 2px solid #252626;
-    width: 50%;
+    width: 0%;
     color: #d5d6d6;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
     border-radius: 5px;
@@ -51,7 +51,7 @@ a{
 }
 
 .widget-body {
-    padding: 20px;
+    padding: 10px;
 }
 
 .document-wrapper {

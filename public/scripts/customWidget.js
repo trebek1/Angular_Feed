@@ -34,6 +34,7 @@ angular.module('Heelix.CustomWidget', [
 
      // Save the documents array to access in the view 
      $scope.documents = documents; 
+     $scope.range = [1,2,3,4]
 
     // this is our demo test, just to make sure everything's wired up properly. feel free to
     // delete it once you get going.

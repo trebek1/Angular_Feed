@@ -7,35 +7,35 @@
             <br>
              <button ng-click="collapsed=!collapsed">Headline: {{document.Document.Headline}}</button>
              <br>
+             
             <br>
             Date: {{document.Document.InsertDate | date:'medium'}}
             <br>
             Source: {{document.Document.Source}}
             <br>
-
             <div class="document-wrapper" ng-show = "collapsed">
             
-                <div class="entity-group">
+                <div class="entity-group">    
                     <p class="entity-group-title">Organizations</p>
-                    <p class="entity">{{document.Orgs[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Document.Orgs[0].Score || ' '}}</span></p>
-                    <div ng-repeat="t in [1,2,3,4] track by $index">
-                        <p class="entity">{{document.Orgs[t].Name || ' '}} <span class="entity-score">{{document.Document.Orgs[t].Score || ' '}}</span></p>
+                    <p class="entity">{{document.Orgs[0].Name || 'No Items Listed'}} <span class="entity-score">  {{document.Orgs[0].Score}}</span></p>
+                    <div ng-repeat="t in range track by $index">
+                        <p class="entity">{{document.Orgs[t].Name || ' '}} <span class="entity-score">{{document.Orgs[t].Score}}</span></p>
                     </div>
                 </div>
 
                 <div class="entity-group">
                     <p class="entity-group-title">People</p>
-                    <p class="entity">{{document.Persons[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Document.Persons[0].Score || ' '}}</span></p>
-                    <div ng-repeat="t in [1,2,3,4] track by $index">
-                        <p class="entity">{{document.Persons[t].Name || ' '}} <span class="entity-score">{{document.Document.Persons[t].Score || ' '}}</span></p>
+                    <p class="entity">{{document.Persons[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Persons[0].Score}}</span></p>
+                    <div ng-repeat="t in range track by $index">
+                        <p class="entity">{{document.Persons[t].Name || ' '}} <span class="entity-score">{{document.Persons[t].Score}}</span></p>
                     </div>
                 </div>            
                 
                 <div class="entity-group">
                     <p class="entity-group-title">Places</p>
-                    <p class="entity">{{document.Places[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Document.Places[0].Score || ' '}}</span></p>
-                    <div ng-repeat="t in [1,2,3,4] track by $index">
-                        <p class="entity">{{document.Places[t].Name || ' '}} <span class="entity-score">{{document.Document.Places[t].Score || ' '}}</span></p>
+                    <p class="entity">{{document.Places[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Places[0].Score}}</span></p>
+                    <div ng-repeat="t in range track by $index">
+                        <p class="entity">{{document.Places[t].Name || ' '}} <span class="entity-score">{{document.Places[t].Score}}</span></p>
                 </div>           
             </div>
 
