@@ -1,44 +1,39 @@
-
 <div class="custom-widget" ng-controller="customWidgetController">
-        
-        
-        <div ng-repeat = "document in documents" ng-class-even= "'even'" ng-class-odd= "'odd'"> 
-            
-            <br>
-             <button ng-click="collapsed=!collapsed">Headline: {{document.Document.Headline}}</button>
-             <br>
              
-            <br>
-            Date: {{document.Document.InsertDate | date:'medium'}}
-            <br>
-            Source: {{document.Document.Source}}
-            <br>
-            <div class="document-wrapper" ng-show = "collapsed">
-            
-                <div class="entity-group">    
-                    <p class="entity-group-title">Organizations</p>
-                    <p class="entity">{{document.Orgs[0].Name || 'No Items Listed'}} <span class="entity-score">  {{document.Orgs[0].Score}}</span></p>
-                    <div ng-repeat="t in range track by $index">
-                        <p class="entity">{{document.Orgs[t].Name || ' '}} <span class="entity-score">{{document.Orgs[t].Score}}</span></p>
-                    </div>
+    <div ng-repeat = "document in documents" ng-class-even= "'even'" ng-class-odd= "'odd'"> 
+        <br>
+        <button ng-click="collapsed=!collapsed">Headline: {{document.Document.Headline}}</button>
+        <br>
+        <br>
+        Date: {{document.Document.InsertDate | date:'medium'}}
+        <br>
+        Source: {{document.Document.Source}}
+        <br>
+        <div class="document-wrapper" ng-show = "collapsed">
+        
+            <div class="entity-group">    
+                <p class="entity-group-title">Organizations - Score</p>
+                <p class="entity">{{document.Orgs[0].Name || 'No Items Listed'}} <span class="entity-score">  {{document.Orgs[0].Score}}</span></p>
+                <div ng-repeat="t in range track by $index">
+                    <p class="entity">{{document.Orgs[t].Name || ' '}} <span class="entity-score">{{document.Orgs[t].Score}}</span></p>
                 </div>
-
-                <div class="entity-group">
-                    <p class="entity-group-title">People</p>
-                    <p class="entity">{{document.Persons[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Persons[0].Score}}</span></p>
-                    <div ng-repeat="t in range track by $index">
-                        <p class="entity">{{document.Persons[t].Name || ' '}} <span class="entity-score">{{document.Persons[t].Score}}</span></p>
-                    </div>
-                </div>            
-                
-                <div class="entity-group">
-                    <p class="entity-group-title">Places</p>
-                    <p class="entity">{{document.Places[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Places[0].Score}}</span></p>
-                    <div ng-repeat="t in range track by $index">
-                        <p class="entity">{{document.Places[t].Name || ' '}} <span class="entity-score">{{document.Places[t].Score}}</span></p>
-                </div>           
             </div>
 
-            <br>
-        </div> 
+            <div class="entity-group">
+                <p class="entity-group-title">People - Score</p>
+                <p class="entity">{{document.Persons[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Persons[0].Score}}</span></p>
+                <div ng-repeat="t in range track by $index">
+                    <p class="entity">{{document.Persons[t].Name || ' '}} <span class="entity-score">{{document.Persons[t].Score}}</span></p>
+                </div>
+            </div>            
+            
+            <div class="entity-group">
+                <p class="entity-group-title">Places - Score</p>
+                <p class="entity">{{document.Places[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Places[0].Score}}</span></p>
+                <div ng-repeat="t in range track by $index">
+                    <p class="entity">{{document.Places[t].Name || ' '}} <span class="entity-score">{{document.Places[t].Score}}</span></p>
+                </div>           
+            </div>
+        </div>
+    </div> 
 </div>

@@ -37,10 +37,11 @@ a{
     margin: 0 auto;
     background: #454646;
     border: 2px solid #252626;
-    width: 0%;
+    width: 60%;
     color: #d5d6d6;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
     border-radius: 5px;
+
 }
 
 .widget-header {
@@ -52,6 +53,8 @@ a{
 
 .widget-body {
     padding: 10px;
+    width: 95%;
+    
 }
 
 .document-wrapper {
