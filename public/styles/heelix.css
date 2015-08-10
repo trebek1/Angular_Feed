@@ -24,7 +24,14 @@ a{
     color: #f5f6f6;
 }
 
-.even{ background-color:grey }
+.even{ 
+    background-color:grey;
+    padding: 10px;
+
+ }
+ .odd{
+    padding: 10px;
+ }
 
 .heelix-widget {
     margin: 0 auto;

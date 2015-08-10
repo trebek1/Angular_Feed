@@ -1,45 +1,42 @@
 
 <div class="custom-widget" ng-controller="customWidgetController">
-        <!-- *
-             * Demo markup: this is included simply as an example of the headline display. It contains
-             * all of the items mentioned in the project description and some helper classes provided
-             * for layout.
-             *
-             * Feel free to use any of this, lay it out differently or delete this.
-             *
-             * -->
         
-        <div ng-repeat = "document in documents" ng-class-even= "'even'"> 
+        
+        <div ng-repeat = "document in documents" ng-class-even= "'even'" ng-class-odd= "'odd'"> 
+            
             <br>
-             <button ng-click="collapsed=!collapsed">Headline: {{document.Headline}}</button>
+             <button ng-click="collapsed=!collapsed">Headline: {{document.Document.Headline}}</button>
              <br>
             <br>
-            Date: {{document.InsertDate | date:'medium'}}
+            Date: {{document.Document.InsertDate | date:'medium'}}
             <br>
-            Source: {{document.Source}}
+            Source: {{document.Document.Source}}
             <br>
 
             <div class="document-wrapper" ng-show = "collapsed">
-
-            <div class="entity-group">
-                <p class="entity-group-title">Organizations</p>
-                <p class="entity">Demo Org 1 <span class="entity-score">(25)</span></p>
-                <p class="entity">Demo Org 2 <span class="entity-score">(24)</span></p>
-                <p class="entity">Demo Org 3 <span class="entity-score">(17)</span></p>
-            </div>
-
-            <div class="entity-group">
-                <p class="entity-group-title">People</p>
-                <p class="entity">Demo Person 1 <span class="entity-score">(39)</span></p>
-                <p class="entity">Demo Person 2 <span class="entity-score">(32)</span></p>
-                <p class="entity">Demo Person 3 <span class="entity-score">(18)</span></p>
-            </div>            
-
-            <div class="entity-group">
-                <p class="entity-group-title">Places</p>
-                <p>No items listed</p>
-            </div>            
             
+                <div class="entity-group">
+                    <p class="entity-group-title">Organizations</p>
+                    <p class="entity">{{document.Orgs[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Document.Orgs[0].Score || ' '}}</span></p>
+                    <div ng-repeat="t in [1,2,3,4] track by $index">
+                        <p class="entity">{{document.Orgs[t].Name || ' '}} <span class="entity-score">{{document.Document.Orgs[t].Score || ' '}}</span></p>
+                    </div>
+                </div>
+
+                <div class="entity-group">
+                    <p class="entity-group-title">People</p>
+                    <p class="entity">{{document.Persons[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Document.Persons[0].Score || ' '}}</span></p>
+                    <div ng-repeat="t in [1,2,3,4] track by $index">
+                        <p class="entity">{{document.Persons[t].Name || ' '}} <span class="entity-score">{{document.Document.Persons[t].Score || ' '}}</span></p>
+                    </div>
+                </div>            
+                
+                <div class="entity-group">
+                    <p class="entity-group-title">Places</p>
+                    <p class="entity">{{document.Places[0].Name || 'No Items Listed'}} <span class="entity-score">{{document.Document.Places[0].Score || ' '}}</span></p>
+                    <div ng-repeat="t in [1,2,3,4] track by $index">
+                        <p class="entity">{{document.Places[t].Name || ' '}} <span class="entity-score">{{document.Document.Places[t].Score || ' '}}</span></p>
+                </div>           
             </div>
 
             <br>
